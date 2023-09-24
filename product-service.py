@@ -43,7 +43,7 @@ def add_product():
         products.append(new_product)
         return jsonify(new_product), 201
     else:
-        return jsonify({"error": "Provide the 'name,' 'price,' and 'quantity'"}), 400
+        return jsonify({"error": "Provide the name, price, and quantity"}), 400
 
 if __name__ == '__main__':
     print("Flask app is running!") 
