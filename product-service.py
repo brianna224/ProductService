@@ -1,13 +1,14 @@
+# Brianna Patrick CMSC455
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
-
 
 
 # Data for products
 products = [
     {"id": 1, "name": "Product 1", "price": 25.0, "quantity": 80},
     {"id": 2, "name": "Product 2", "price": 2.99, "quantity": 10},
+    {"id": 3, "name": "Product 3", "price": 10.00, "quantity": 50},
 ]
 
 # Endpoint to retrieve list of all products
@@ -41,7 +42,9 @@ def add_product():
         }
         products.append(new_product)
         return jsonify(new_product), 201
-    return jsonify({"error": "Invalid product data"}), 400
+    else:
+        return jsonify({"error": "Provide the 'name,' 'price,' and 'quantity'"}), 400
 
 if __name__ == '__main__':
+    print("Flask app is running!") 
     app.run(debug=True)
