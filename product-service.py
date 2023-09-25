@@ -47,4 +47,4 @@ def add_product():
 
 if __name__ == '__main__':
     print("Flask app is running!") 
-    app.run(debug=True)
+    #app.run(debug=True)
